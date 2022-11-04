@@ -1,7 +1,7 @@
 import React from 'react';
 
 const InputBox = (props) => {
-	let {type, label, placeholder} = props
+	let {id, type, label, placeholder} = props
 	if (placeholder === undefined){
 		placeholder = '';
 	}
@@ -9,6 +9,7 @@ const InputBox = (props) => {
 		<form className='ma2 pa3'>
 			<label className='f4'>{label}</label>
 			<input 
+				id={id}
 				type={type} 
 				placeholder={placeholder} 
 				className='ma2 pa3 w5'>
