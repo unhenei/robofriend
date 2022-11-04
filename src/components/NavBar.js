@@ -1,9 +1,14 @@
-import react from 'react';
+import React from 'react';
+import './NavBar.css';
 
-const NavBar = {
-	<div className = 'dib'>
-		<h4>Residents</h4>
-		<h4>New Friends</h4>
-		<div id = 'icon'></div>
-	</div>
+const NavBar = () => {
+	return(
+		<div id='navContainer' className = 'pa2 flex justify-end'>
+			<div className = 'dib ma3 v-mid f3'>Residents</div>
+			<div className = 'dib ma3 v-mid f3'>New Friends</div>
+			<div id = 'profileIcon' className = 'dib ma3 v-mid'></div>
+		</div>
+	)
 }
+
+export default NavBar;
