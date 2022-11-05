@@ -5,6 +5,8 @@ import InfoForm from './InfoForm';
 import RandomBtn from './RandomBtn';
 import SubmitBtn from './SubmitBtn';
 import {firstNameList, lastNameList, jobList} from './randomRoboInfo';
+import {robots} from '../robots'
+import Popup from '../Popup'
 
 class NewCard extends Component {
 	constructor(){
@@ -53,8 +55,50 @@ class NewCard extends Component {
 		// forbid saving robot with the same id (not check for look, only id)
 		// forbid saving robot with the same name
 		// double check if the job already exist
+		const newRobotId = document.getElementById('newId').value;
+		const newRobotName = document.getElementById('newName').value;
+		const newRobotJob = document.getElementById('newJob').value;
 
+		const dataRobotId = robots.map(e=>e.id)
+		const dataRobotName = robots.map(e=>e.name)
+		const dataRobotJob = robots.map(e=>e.job)
+		if(dataRobotId.includes(newRobotId)){
+			const index = dataRobotId.indexOf(newRobotId)
+			return(
+				<Card key={robots[index].id} id={robots[index].id} name={robots[index].name} job={robots[index].job} />		
 
+				// <Popup>
+				// 	<div>You already befriend this robot.</div>
+				// 	<Card key={robots[index].id} id={robots[index].id} name={robots[index].name} job={robots[index].job} />		
+				// </Popup>
+			) 
+		}
+		if(dataRobotName.includes(newRobotName)){
+			//popup is not working
+			<Popup>
+				<div>You already befriend a robot with the same name. Are you sure you want the robot with the same name?</div>
+			</Popup>
+			return		
+		}
+		if(dataRobotJob.includes(newRobotJob)){
+			return(
+				<Popup>
+					<div>You already befriend a robot with the same job. Are you sure you want the robot with the same job?</div>
+				</Popup>
+			) 
+		}
+		const newRobot = {
+		    id: newRobotId,
+		    name: newRobotName,
+		    job: newRobotJob,
+		    email: newRobotName.replaceAll(' ').concat('@gmail.com')
+		}
+		// this is not adding the new robot into database
+		robots.push(newRobot)
+		console.log(robots)
+		return(
+			<Popup props={'Sucessfully add the robot to the list.'} />
+		)
 	}
 
 	randomInfoGenerator = () => {
@@ -62,7 +106,7 @@ class NewCard extends Component {
 			return Math.floor(Math.random() * length)
 		}
 		// generate a set of id
-		//a random 8-digit-string composed by alphabets and numbers
+		//a random 4-digit-string composed by alphabets and numbers
 		const uppercase = Array.from(Array(26)).map((e, i) => i + 65);
 		const lowercase = Array.from(Array(26)).map((e, i) => i + 97);
 		const alphabet = uppercase.concat(lowercase).map((x) => String.fromCharCode(x));
@@ -75,7 +119,7 @@ class NewCard extends Component {
 			}
 			return id
 		}
-		let randomId = randomIdGenerator(8);
+		let randomId = randomIdGenerator(4);
 		// random name from firstnamListe lastnameList
 		let randomName = firstNameList[randomNum(firstNameList.length)].concat(' ', lastNameList[randomNum(lastNameList.length)]);
 		// random job from jobList
@@ -102,12 +146,6 @@ class NewCard extends Component {
 		   			<RandomBtn randomInfoGenerator={this.randomInfoGenerator} />
 		   			<SubmitBtn createNewRobot={this.createNewRobot} />
 				</div>
-{/*				// random (all random, get a name list and a job list)
-				// type in
-				// set name
-				// set job
-				// cant be one thats already in (show alert)
-				// maximum? different villege?*/}
 			</div>
 		)
 	}

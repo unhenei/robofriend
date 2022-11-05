@@ -1,0 +1,15 @@
+#popup {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+	background-color: lightyellow;
+	border-radius: 3px;
+	border: 1px solid grey;
+	min-width: 200px;
+	height: auto;
+	z-index: 3;
+	padding: 20px;
+}
