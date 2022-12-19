@@ -6,7 +6,7 @@ const InputBox = (props) => {
 		placeholder = '';
 	}
 	return(
-		<form className='ma2 pa3'>
+		<form className='ma2 pa3'  style={{display:'grid', 'grid-template-columns': '1fr 5fr', 'align-items':'center'}}>
 			<label className='f4'>{label}</label>
 			<input 
 				id={id}
