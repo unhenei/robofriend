@@ -8,7 +8,7 @@ const CardList = ({robots}) => {
 		)
 	})
 	return(
-		<div className='flex flex-wrap'>
+		<div className='flex flex-wrap' style={{'justifyContent':'flex-start'}}>
 			{robotsCards}
 		</div>
 	)
