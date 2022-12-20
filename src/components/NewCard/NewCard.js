@@ -79,7 +79,8 @@ class NewCard extends Component {
 			    job: newRobotJob,
 			    email: newRobotName.replaceAll(' ').concat('@gmail.com')
 			}
-			this.setState({robot: this.state.robot.push(newRobot)})
+			const newRobotList = this.state.robot.push(newRobot)
+			this.setState({robot: newRobotList})
 			// this is not adding the new robot into database
 			this.props.loadRobot(this.state.robot)
 			toast.success('Sucessfully add the robot to the list.')
@@ -129,7 +130,7 @@ class NewCard extends Component {
 				</div>
 				<div>
 		    		<InfoForm />
-		    		<div style={{display:'flex', 'justify-content':'space-evenly'}}>
+		    		<div style={{display:'flex', 'justifyContent':'space-evenly'}}>
 			   			<RandomBtn randomInfoGenerator={this.randomInfoGenerator} />
 			   			<SubmitBtn createNewRobot={this.createNewRobot} />
 			   		</div>
