@@ -80,7 +80,6 @@ class NewCard extends Component {
 			    email: newRobotName.replaceAll(' ').concat('@gmail.com')
 			}
 			const newRobotList = this.state.robot.push(newRobot)
-			console.log('new',newRobotList,this.state.robot)
 			this.setState({robot: this.state.robot})
 			// this is not adding the new robot into database
 			this.props.loadRobot(this.state.robot)
