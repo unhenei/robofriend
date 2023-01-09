@@ -17,9 +17,6 @@ class NewCard extends Component {
 			job: '',
 			robot: robots
 		}
-		// this.IdInput = document.getElementById('newId').value
-		// this.NameInput = document.getElementById('newName').value
-		// this.JobInput = document.getElementById('newJob').value
 	}
 
 	createNewRobot = () => {
@@ -56,21 +53,22 @@ class NewCard extends Component {
 
 	addRobot = () => {
 		// check if robots already exists
-		// forbid saving robot with the same id
-		// forbid saving robot with the same name
-		// double check if the job already exist
+		// forbid saving robot with the same id, name, or job
 		const newRobotId = document.getElementById('newId').value;
 		const newRobotName = document.getElementById('newName').value;
 		const newRobotJob = document.getElementById('newJob').value;
 
 		const dataRobotId = robots.map(e=>e.id)
-		const dataRobotName = robots.map(e=>e.name)
-		const dataRobotJob = robots.map(e=>e.job)
-		if(dataRobotId.includes(newRobotId)){
+		const dataRobotName = robots.map(e=>e.name.toUpperCase())
+		const dataRobotJob = robots.map(e=>e.job.toUpperCase())
+
+		if (!document.getElementById('newId').value||!document.getElementById('newName').value||!document.getElementById('newJob').value){
+			toast.error('Please fill in all the field before adding the robot to the list.')
+		} else if(dataRobotId.includes(newRobotId)){
 			toast.error('You have already befriended this robot.')
-		} else if(dataRobotName.includes(newRobotName)){
+		} else if(dataRobotName.includes(newRobotName.toUpperCase())){
 			toast.error('You have already befriended a robot with the same name.')	
-		} else if(dataRobotJob.includes(newRobotJob)){
+		} else if(dataRobotJob.includes(newRobotJob.toUpperCase())){
 			toast.error('You have already befriended a robot with the same job.')
 		} else {
 			const newRobot = {
@@ -79,9 +77,8 @@ class NewCard extends Component {
 			    job: newRobotJob,
 			    email: newRobotName.replaceAll(' ').concat('@gmail.com')
 			}
-			const newRobotList = this.state.robot.push(newRobot)
-			this.setState({robot: this.state.robot})
-			// this is not adding the new robot into database
+			this.setState({robot: this.state.robot.push(newRobot)})
+			// notice: in this project, we do not add new robot into database
 			this.props.loadRobot(this.state.robot)
 			toast.success('Sucessfully add the robot to the list.')
 		}
