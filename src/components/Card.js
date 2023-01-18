@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Card = ({id, name, job}) => {
-	// const {id, name, job} = props
+	if (!id) {id = 1}
 	return(
 		<div id='cardContainer' className='pa3 w5 br3 ma2 tc bg-light-gray'>
 			<img alt='robot' src={`https://robohash.org/${id}?size=200x200`}></img>

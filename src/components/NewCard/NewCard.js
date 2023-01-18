@@ -127,7 +127,7 @@ class NewCard extends Component {
 				</div>
 				<div>
 		    		<InfoForm />
-		    		<div style={{display:'flex', justifyContent:'space-evenly', padding:'5px'}}>
+		    		<div style={{display:'flex', justifyContent:'center', padding:'5px'}}>
 			   			<RandomBtn randomInfoGenerator={this.randomInfoGenerator} />
 			   			<SubmitBtn createNewRobot={this.createNewRobot} />
 			   		</div>
