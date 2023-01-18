@@ -63,7 +63,7 @@ class NewCard extends Component {
 		const dataRobotJob = robots.map(e=>e.job.toUpperCase())
 
 		if (!document.getElementById('newId').value||!document.getElementById('newName').value||!document.getElementById('newJob').value){
-			toast.error('Please fill in all the field before adding the robot to the list.')
+			toast.error('Please fill in all the fields before adding the robot to the list.')
 		} else if(dataRobotId.includes(newRobotId)){
 			toast.error('You have already befriended this robot.')
 		} else if(dataRobotName.includes(newRobotName.toUpperCase())){
@@ -121,13 +121,13 @@ class NewCard extends Component {
 		return(
 			<div className='flex'>
 				<Toaster />
-				<div className='tc'>
+				<div style={{margin:'auto'}}>
 					<Card key={this.state.id} id={this.state.id} name={this.state.name} job={this.state.job} />
 					<AddRobotBtn addRobot={this.addRobot} />
 				</div>
 				<div>
 		    		<InfoForm />
-		    		<div style={{display:'flex', 'justifyContent':'space-evenly'}}>
+		    		<div style={{display:'flex', justifyContent:'space-evenly', padding:'5px'}}>
 			   			<RandomBtn randomInfoGenerator={this.randomInfoGenerator} />
 			   			<SubmitBtn createNewRobot={this.createNewRobot} />
 			   		</div>
