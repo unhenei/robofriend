@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# robofriend (robot searching webpage)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).<br>
+It was a project of the ZTM bootcamp; however, I extended the project by adding several features, such as the switch on which category to be searched, and the 'New' button on the top-right corner, where the user could make their own robots and put it in the list.
 
-## Available Scripts
+## Highlights
+I added a few features to make it more enjoyable. Originally, I thought about making it more game like, to add a database and a register form, so the user could build their own robot villages, group the robots, add and delete the robots, etc. But the database and register wouldn't be too different from what I have done in another project (face recognition app), so I wanted to put more time on what else I could do.
+### Search by category
+The first thing I thought about is that, if I am going to search the robot by their names, why not make it more by enabling searching by other category, that is how I came up with the 'search by job' option.<br>
+With an easy fix on the state and adding a conditional statement, the search bar offers more flexibility for the users.<br>
+This was an idea came from my user experience from other websites, when there are tons of works, we looked for a better searching system other then search on plain text. For example, date, tags, authors, etc.<br>
+What could be improved is that maybe added more details for each robots and make a cross searching filter.
 
-In the project directory, you can run:
+### Add new robot
+Since it is a robot friend webpage, it came naturally to develop a 'Find New Friend' feature. It was also a part of the original robot villiage site in my mind. That was how the 'New' button on the top-right corner born.<br>
+I wanted the user to be able to customize the name and the job for their own robots, which is why the form was all empty when first entering.<br>
+However I also took the user experience into consideration. From the designer's viewpoint, I knew what each spaces are for, but it might not be intuitive for the user. That is why I added some instruction on the top of the window, and also made sure to set the placeholder with brief explanation.<br>
+Furthermore, I added the 'Random' button, so even if the user don't know what to do with the window, they could at least get a robot by a simple click.
 
-### `npm start`
+## Limitations and improvements
+### Database
+What I was not satisfied with the web was the fact that due to the lack of database in this project, I have to store all the plain data in the file, which is not ideal for a real world webpage.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Mobile Responsive
+The 'New' window, which, for me, could be said to be the main focus on the webpage, was built as a fixed window, so the user experience on cross devices was especially bad. It was hard to close the window on a mobile phone. Make it more responsive and think more about how the product should look like on different devices is rather important.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Conclusion
+Aside from the technical skills, the thing I learnt the most from this project is to implement my ideas and concepts in the product development process.<br>
+I first had a clear idea of what the final product should look like, then I used the skills I had, or I searched for the ways to put what was in my head into reality. The final result is far from perfect, but I managed to develop a product close to my vision.<br>
+The other main takeaway is that after noticing that I could accidentally set too much assumptions and made an unintuitive webpage, I tried to look the product from an outsider's viewpoint, and made several efforts in order to make all the functions look more clearly. This mindset also helped me greatly in the following project.
